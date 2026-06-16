@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,101 +12,254 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:#f4f6f9;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
 }
 
 .container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero{
     text-align:center;
+    padding:80px 20px;
 }
 
-.container h1{
-    font-size:3rem;
-    color:#222;
-    margin-bottom:10px;
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+    background:linear-gradient(to right,#60a5fa,#22d3ee);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.container p{
-    color:#666;
-    margin-bottom:40px;
-    font-size:1.1rem;
+.hero p{
+    color:#cbd5e1;
+    font-size:1.2rem;
 }
 
-.cards{
+.developer{
+    margin-top:20px;
+    color:#94a3b8;
+    font-size:1rem;
+}
+
+.buttons{
+    margin-top:40px;
     display:flex;
-    gap:30px;
     justify-content:center;
+    gap:20px;
     flex-wrap:wrap;
 }
 
-.card{
-    width:320px;
-    padding:30px;
-    background:white;
-    border-radius:15px;
+.btn{
     text-decoration:none;
-    color:black;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s ease;
+    color:white;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    padding:15px 30px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.section-title{
+    text-align:center;
+    margin:50px 0 25px;
+    font-size:2rem;
+    color:#60a5fa;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:.3s;
 }
 
 .card:hover{
     transform:translateY(-8px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
-.card h2{
-    color:#2563eb;
+.card h3{
+    color:#38bdf8;
     margin-bottom:15px;
 }
 
-.card p{
-    margin-bottom:0;
-    color:#555;
+.card ul{
+    padding-left:20px;
+}
+
+.card li{
+    margin-bottom:10px;
+    color:#cbd5e1;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.stat-box{
+    background:#1e293b;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:.3s;
+}
+
+.stat-box:hover{
+    transform:translateY(-8px);
+}
+
+.score{
+    font-size:2rem;
+    font-weight:bold;
+    color:#22d3ee;
+    margin-bottom:10px;
+}
+
+.model{
+    color:#cbd5e1;
+}
+
+.footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#94a3b8;
 }
 
 </style>
-
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>Loan Prediction System</h1>
-    <p>Choose what you want to predict</p>
+    <div class="hero">
+
+        <h1>Loan Prediction System</h1>
+
+        <p>
+            Machine Learning Based Financial Analysis Platform
+        </p>
+
+        <div class="developer">
+            Developed By Ansh
+        </div>
+
+        <div class="buttons">
+
+            <a href="/loan-amount" class="btn">
+                Loan Amount Prediction
+            </a>
+
+            <a href="/loan-approval" class="btn">
+                Loan Approval Prediction
+            </a>
+
+        </div>
+
+    </div>
+
+    <h2 class="section-title">
+        Algorithms Used
+    </h2>
 
     <div class="cards">
 
-        <a href="/loan-amount" class="card">
-            <h2>Loan Amount Prediction</h2>
-            <p>
-                Predict the loan amount using
-                Linear Regression,
-                Decision Tree Regressor and
-                Random Forest Regressor.
-            </p>
-        </a>
+        <div class="card">
+            <h3>Classification Models</h3>
+            <ul>
+                <li>Logistic Regression</li>
+                <li>Decision Tree Classifier</li>
+                <li>Random Forest Classifier</li>
+            </ul>
+        </div>
 
-        <a href="/loan-approval" class="card">
-            <h2>Loan Approval Prediction</h2>
-            <p>
-                Predict loan approval status using
-                Logistic Regression,
-                Decision Tree Classifier and
-                Random Forest Classifier.
-            </p>
-        </a>
+        <div class="card">
+            <h3>Regression Models</h3>
+            <ul>
+                <li>Linear Regression</li>
+                <li>Decision Tree Regressor</li>
+                <li>Random Forest Regressor</li>
+            </ul>
+        </div>
 
+    </div>
+
+    <h2 class="section-title">
+        Classification Accuracy
+    </h2>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <div class="score">79.86%</div>
+            <div class="model">Logistic Regression</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="score">97.78%</div>
+            <div class="model">Decision Tree Classifier</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="score">97.78%</div>
+            <div class="model">Random Forest Classifier</div>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">
+        Regression R² Score
+    </h2>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <div class="score">0.8514</div>
+            <div class="model">Linear Regression</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="score">0.7128</div>
+            <div class="model">Decision Tree Regressor</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="score">0.8457</div>
+            <div class="model">Random Forest Regressor</div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Machine Learning Project • Loan Prediction System
     </div>
 
 </div>
 
 </body>
 </html>
+```
